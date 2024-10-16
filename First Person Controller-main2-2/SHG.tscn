@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://58d7n3xhh6m3"]
+
+[ext_resource type="Texture2D" uid="uid://3k46k7oql2gt" path="res://SpaceDemo/cubemap.png" id="1_nwbij"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8liuq"]
+panorama = ExtResource("1_nwbij")
+
+[sub_resource type="Sky" id="Sky_l55l4"]
+sky_material = SubResource("PanoramaSkyMaterial_8liuq")
+
+[sub_resource type="Environment" id="Environment_e7wwc"]
+background_mode = 2
+background_energy_multiplier = 3.06
+sky = SubResource("Sky_l55l4")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e7wwc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.88348, 0.46847, 0, -0.46847, 0.88348, 0, 0, 0, 1, 0, 0, 0)

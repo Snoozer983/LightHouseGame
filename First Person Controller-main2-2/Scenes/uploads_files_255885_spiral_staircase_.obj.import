@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://duam5t2dnabbn"
+path="res://.godot/imported/uploads_files_255885_spiral_staircase_.obj-2bf170524e62084d66af23970231243c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uploads_files_255885_spiral_staircase_.obj-2bf170524e62084d66af23970231243c.mesh"]
+
+source_file="res://Scenes/uploads_files_255885_spiral_staircase_.obj"
+dest_files=["res://.godot/imported/uploads_files_255885_spiral_staircase_.obj-2bf170524e62084d66af23970231243c.mesh", "res://.godot/imported/uploads_files_255885_spiral_staircase_.obj-2bf170524e62084d66af23970231243c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,203 @@
+[gd_scene load_steps=8 format=3 uid="uid://db2h3t17k37pe"]
+
+[ext_resource type="PackedScene" uid="uid://fje3hiw64a4d" path="res://Scenes/lighthouse.tscn" id="2_e5guh"]
+[ext_resource type="Shader" path="res://Materials/Shaders/CRT.gdshader" id="2_gilff"]
+
+[sub_resource type="Environment" id="Environment_g5ak0"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+fog_enabled = true
+fog_density = 0.03
+
+[sub_resource type="Animation" id="Animation_c4i58"]
+length = 120.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(4.71239, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 30, 90, 120),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.3, 0.3, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldEnvironment:environment:background_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../WorldEnvironment:environment:fog_light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30, 90, 120),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.3, 0.3, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WorldEnvironment:environment:ambient_light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hgwao"]
+resource_name = "sunRotate"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(4.71239, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15, 45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.6, 0.0, 0.6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldEnvironment:environment:background_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.374739, 0.566016, 0.636963, 1), Color(5.58404e-09, 8.4343e-09, 9.49148e-09, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../WorldEnvironment:environment:fog_light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30, 45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WorldEnvironment:environment:ambient_light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cx2i6"]
+_data = {
+"RESET": SubResource("Animation_c4i58"),
+"sunRotate": SubResource("Animation_hgwao")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1sllj"]
+shader = ExtResource("2_gilff")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.36
+shader_parameter/distort_intensity = 0.015
+shader_parameter/noise_opacity = 0.19
+shader_parameter/noise_speed = 3.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.02
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g5ak0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, -82.5272, 57.35, 0)
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3D"]
+libraries = {
+"": SubResource("AnimationLibrary_cx2i6")
+}
+autoplay = "RESET"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.220775, -0.314539, 0.923214, 0.0731555, 0.949244, 0.305914, -0.972577, 0, 0.23258, -54.1961, 27.6259, 7.15338)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="CRT" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_1sllj")
+offset_left = -14.0
+offset_top = -3.0
+offset_right = 321.0
+offset_bottom = 239.0
+mouse_filter = 2
+
+[node name="lighthouse" parent="." instance=ExtResource("2_e5guh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5262, 37.1221, 68.2113)
