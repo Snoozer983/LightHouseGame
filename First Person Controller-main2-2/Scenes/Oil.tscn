@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvlsvvrlpfc1d"]
+[gd_scene load_steps=3 format=3 uid="uid://b2c3sa7whhnlm"]
 
-[ext_resource type="Script" path="res://Scenes/oil.gd" id="1_3yffv"]
+[ext_resource type="Script" path="res://Scenes/oil.gd" id="1_pfp6l"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_w8mps"]
 
 [node name="Oil2" type="Area3D"]
-script = ExtResource("1_3yffv")
+script = ExtResource("1_pfp6l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("SphereShape3D_w8mps")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

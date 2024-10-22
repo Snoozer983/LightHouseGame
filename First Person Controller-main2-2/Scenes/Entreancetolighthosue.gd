@@ -9,8 +9,6 @@ func _ready():
 
 func Doorway() -> void:
 	print("Doorway")
-
-#func area_entered(_area):
 #	get_tree().change_scene_to_file("res://InteriorLightHouse.tscn")
 #	print("Best case ")
 #	print("semi best case")
@@ -18,4 +16,4 @@ func Doorway() -> void:
 
 func _on_area_entered(area):
 	print("Doorway") # Replace with function body.
-	get_tree().change_scene_to_file("res://InteriorLightHouse.tscn")
+	get_tree().change_scene_to_file("res://Scenes/InteriorLightHouse.tscn")

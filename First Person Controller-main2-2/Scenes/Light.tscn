@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvo6yrudhp6en"]
 
-[ext_resource type="PackedScene" uid="uid://emxchh1wahgi" path="res://model.dae" id="1_gijci"]
+[ext_resource type="PackedScene" uid="uid://emxchh1wahgi" path="res://Scenes/model.dae" id="1_gijci"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isj6h"]
 resource_name = "initialShadingGroup"

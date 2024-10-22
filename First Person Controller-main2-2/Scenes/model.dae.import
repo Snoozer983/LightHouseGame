@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://emxchh1wahgi"
-path="res://.godot/imported/model.dae-54aae0c5261ea88aeeee3e8cd370f7ea.scn"
+path="res://.godot/imported/model.dae-847a29d5c75d2dec5523b882141a779c.scn"
 
 [deps]
 
-source_file="res://model.dae"
-dest_files=["res://.godot/imported/model.dae-54aae0c5261ea88aeeee3e8cd370f7ea.scn"]
+source_file="res://Scenes/model.dae"
+dest_files=["res://.godot/imported/model.dae-847a29d5c75d2dec5523b882141a779c.scn"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bewg4oqa6gpa6"]
+
+[ext_resource type="Script" path="res://reversedoor.gd" id="1_fjkmj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpg3r"]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_fjkmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.206215, 0, -0.100776)
+shape = SubResource("CapsuleShape3D_gpg3r")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

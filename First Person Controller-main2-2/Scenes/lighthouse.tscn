@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d3nxipxev64e5" path="res://Materials/Textures/Lighthouse/white_sandstone_blocks_02_diff_4k.png" id="7_l15it"]
 [ext_resource type="Shader" path="res://Scenes/Water.gdshader" id="8_0jetj"]
 [ext_resource type="Texture2D" uid="uid://ci4rbng53mera" path="res://Materials/concrete_panels_diff_4k.png" id="8_t1wht"]
-[ext_resource type="PackedScene" uid="uid://ciyd0xegksvts" path="res://doorway.tscn" id="9_asfe1"]
+[ext_resource type="PackedScene" uid="uid://ciyd0xegksvts" path="res://Scenes/doorway.tscn" id="9_asfe1"]
 [ext_resource type="Script" path="res://Scenes/LighthouseBeacon.gd" id="9_l7uo4"]
-[ext_resource type="PackedScene" uid="uid://b2c3sa7whhnlm" path="res://Oil.tscn" id="11_hw743"]
+[ext_resource type="PackedScene" uid="uid://b2c3sa7whhnlm" path="res://Scenes/Oil.tscn" id="11_hw743"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1p3tp"]
 transparency = 1
@@ -956,7 +956,7 @@ data = PackedVector3Array(10.6753, -0.0511, 11.6031, 10.6803, -0.2938, 11.7439, 
 [node name="lighthouse" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("6_s2k8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.57889, 3.04701, 10.0683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18648, 0.227631, 4.35941)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(-0.166098, 0, -0.986109, 0, 1, 0, 0.986109, 0, -0.166098, -0.43453, 15.4482, 1.23321)
@@ -1270,7 +1270,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_gcmsp")
 
 [node name="Doorway" parent="." instance=ExtResource("9_asfe1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62, 0.856, 1.159)
+transform = Transform3D(0.834169, 0, 0, 0, 0.834169, 0, 0, 0, 0.834169, -0.200922, 0.856, 1.159)
 disable_mode = 2
 
 [node name="Oil" parent="." instance=ExtResource("11_hw743")]
@@ -1280,4 +1280,4 @@ transform = Transform3D(-0.831402, 0, -0.555672, 0, 1, 0, 0.555672, 0, -0.831402
 transform = Transform3D(-0.831402, 0, -0.555672, 0, 1, 0, 0.555672, 0, -0.831402, 53.2158, -4.64938, 19.1048)
 text = "Press e to refuel your oil."
 
-[connection signal="area_entered" from="Doorway" to="Player" method="_on_doorway_area_entered"]
+[editable path="Player"]
